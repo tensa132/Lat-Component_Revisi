@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'my-app',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
+
+  constructor (private router : Router) {}
+  InputPage() {
+    this.router.navigate(['/input']);
+  }
+  ListPage() {
+    this.router.navigate(['/list-page']);
+  }
+  EditPage() {
+    this.router.navigate(['/edit-page']);
+    
+  }
 }
