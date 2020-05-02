@@ -15,16 +15,17 @@ export class GlobSerService {
     nama: 'DKV',
     keterangan: 'Gambar terus'
   }];
-  appendListJurusan(jurusanBaru, penjelasanBaru) {
+  
+  public appendListJurusan(jurusanBaru, penjelasanBaru) {
     this.listJurusan.push(jurusanBaru, penjelasanBaru);
   }
-  setNamaJurusan(idx, jurusanBaru) {
+  public setNamaJurusan(idx, jurusanBaru) {
     this.listJurusan[idx][0] = jurusanBaru;
   }
-  setPenjelasanJurusan(idx, penjelasanBaru) {
+  public setPenjelasanJurusan(idx, penjelasanBaru) {
     this.listJurusan[idx][1] = penjelasanBaru;
   }
-  getData() {
+  public getData() {
     return this.listJurusan;
   }
 }

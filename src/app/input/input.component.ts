@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
 import { GlobSerService } from '../glob-ser.service';
 
 @Component({
@@ -9,14 +8,25 @@ import { GlobSerService } from '../glob-ser.service';
 })
 export class InputComponent implements OnInit {
 
-  constructor(private route : ActivatedRoute, private routePass : Router, public varglob : GlobSerService) { }
-
   nama : String; penjelasan : String;
+  dataGlobal:any;
+  tempDataGlobal:any;
+  newData:any;
+  constructor(public variabelglobal: GlobSerService) {
+    this.dataGlobal = this.variabelglobal.getData();
+    this.tempDataGlobal = this.dataGlobal;
+  }
+
   ngOnInit() {
   }
 
   submit() {
-    this.varglob.appendJurusan(this.nama);
-    this.varglob.appendPenjelasan(this.penjelasan);
+    this.newData = {
+      nama: this.nama,
+      keterangan: this.penjelasan
+    }
+    this.tempDataGlobal.push(this.newData);
+    this.variabelglobal.setData(this.tempDataGlobal);
+    this.dataGlobal.getData();
   }
 }

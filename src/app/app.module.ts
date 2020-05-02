@@ -13,7 +13,6 @@ import { GlobSerService } from './glob-ser.service';
 const ROUTES: Routes=[
   {path:'input', component: InputComponent},
   {path:'list-page', component: ListPageComponent},
-  {path:'list-page/:namaJurusan/:penjelasanJurusan', component: ListPageComponent},
   {path:'edit-page', component: EditPageComponent}
 ]
  
